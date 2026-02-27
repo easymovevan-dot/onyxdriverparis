@@ -94,7 +94,7 @@ export async function POST(request: Request) {
         const budget = persona?.budget || 0;
         const userPrefs = persona?.prefs || [];
 
-        let results = [];
+        let results: any[] = [];
         let source = 'mock';
 
         // 1. Live API
