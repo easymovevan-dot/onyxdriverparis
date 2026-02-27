@@ -148,8 +148,8 @@ export async function POST(request: Request) {
         }
 
         // Scoring & Tagging
-        results.sort((a, b) => b.score - a.score);
-        const final = results.map((h, i) => ({
+        results.sort((a: any, b: any) => b.score - a.score);
+        const final = results.map((h: any, i: number) => ({
             ...h,
             tag: i === 0 ? 'PERFECTION' : i === 1 ? 'SMART' : 'GEM',
             tagLabel: i === 0 ? 'SÉCURISÉ PRÉMIUM' : i === 1 ? 'AUDIT POSITIF' : 'PÉPITE VÉRIFIÉE',
