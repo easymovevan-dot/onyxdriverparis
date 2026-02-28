@@ -6,9 +6,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: "ONYX PLATINUM | Chauffeur VTC Van Mercedes EQV Paris & 95",
-  description: "Le leader du transport de luxe 100% électrique à Cormeilles-en-Parisis. Transferts aéroports CDG/Orly, Disneyland et mise à disposition VIP.",
-  keywords: ["VTC Cormeilles-en-Parisis", "Van Luxe Paris", "Mercedes EQV", "Transfert CDG", "Chauffeur Privé 95"],
+  title: "ONYX DRIVE PARIS | Chauffeur VTC Premium 100% Électrique",
+  description: "L'excellence du transport de luxe 100% électrique à Paris. Transferts aéroports CDG/Orly, Disneyland, Fashion Week et prestations sur mesure en Mercedes EQV.",
+  keywords: ["Onyx Drive Paris", "VTC Electrique Paris", "Mercedes EQV Paris", "Chauffeur Privé Paris", "Transfert Aéroport Luxe"],
 };
 
 export default function RootLayout({

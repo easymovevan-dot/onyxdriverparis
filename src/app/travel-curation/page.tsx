@@ -129,12 +129,15 @@ export default function TravelCurationPage() {
             <div className="orb orb-3" />
 
             {/* Navigation Navigation */}
-            <nav style={{ position: 'fixed', top: 0, width: '100%', height: 60, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 24px' }}>
+            <nav style={{ position: 'fixed', top: 0, width: '100%', height: 80, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 24px' }} className="glass border-b border-white/5">
                 <div style={{ maxWidth: 1200, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Link href="/" style={{ color: '#fff', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <ArrowRight size={14} style={{ transform: 'rotate(180deg)', color: 'var(--gold)' }} /> ONYX PLATINUM
+                    <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }}>
+                        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <Zap size={18} className="text-white fill-white" />
+                        </div>
+                        <span style={{ fontSize: 18, fontWeight: 900, letterSpacing: '-0.04em', color: '#fff' }}>ONYX <span style={{ color: '#2563eb' }}>DRIVE</span> PARIS</span>
                     </Link>
-                    <div className="glass" style={{ padding: '6px 14px', borderRadius: 20, fontSize: 11, fontWeight: 700, color: 'var(--gold)', letterSpacing: '0.05em' }}>
+                    <div className="glass" style={{ padding: '8px 16px', borderRadius: 20, fontSize: 10, fontWeight: 900, color: '#2563eb', letterSpacing: '0.2em', textTransform: 'uppercase', border: '1px solid rgba(37,99,235,0.2)' }}>
                         TASK FORCE AI ACTIVE
                     </div>
                 </div>
