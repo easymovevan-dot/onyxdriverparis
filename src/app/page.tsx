@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ChevronRight, ShieldCheck, Globe, Zap, Sparkles, Search, CheckCircle2, ArrowRight, Plane, Hotel, Calculator } from "lucide-react";
 import Link from "next/link";
+import BookingForm from "@/components/BookingForm";
 
 const ease = [0.25, 1, 0.5, 1] as any;
 
@@ -129,6 +130,11 @@ export default function Home() {
                         ))}
                     </div>
                 </div>
+            </section>
+
+            {/* ═══ BOOKING SECTION ═══ */}
+            <section id="booking" className="px-6 pb-20">
+                <BookingForm />
             </section>
 
             {/* ═══ FINAL CTA ═══ */}
