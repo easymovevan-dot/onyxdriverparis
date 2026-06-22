@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronRight, ShieldCheck, Globe, Zap, Sparkles, Plane, Hotel } from "lucide-react";
+import { ChevronRight, ShieldCheck, Globe, Zap, Sparkles, Plane, Hotel, Phone } from "lucide-react";
 import Link from "next/link";
 import BookingForm from "@/components/BookingForm";
 
@@ -22,12 +22,12 @@ export default function Home() {
                     <div className="hidden md:flex gap-10 text-[11px] font-black tracking-[0.2em] uppercase text-white/40">
                         <a href="#booking" className="hover:text-white transition-colors">Réserver</a>
                         <a href="#services" className="hover:text-white transition-colors">Services</a>
-                        <a href="#agents" className="hover:text-white transition-colors">Task Force</a>
+                        <a href="#tarifs" className="hover:text-white transition-colors">Tarifs</a>
                     </div>
                     <div className="flex items-center gap-4">
-                        <div className="hidden sm:flex gap-2 text-[12px]">
-                            <span>🇫🇷</span> <span className="opacity-30">🇬🇧</span> <span className="opacity-30">🇦🇪</span>
-                        </div>
+                        <a href="tel:+33602565680" className="hidden sm:flex items-center gap-2 text-[11px] font-black text-white/50 hover:text-white transition-colors">
+                            <Phone size={14} /> 06 02 56 56 80
+                        </a>
                         <a href="#booking" className="bg-white text-black px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-blue-500 hover:text-white transition-all">
                             RÉSERVER
                         </a>
@@ -66,6 +66,41 @@ export default function Home() {
                 <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
                     <div className="absolute top-[10%] left-[20%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px]" />
                     <div className="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-white/5 rounded-full blur-[150px]" />
+                </div>
+            </section>
+
+            {/* ═══ TARIFS SECTION ═══ */}
+            <section id="tarifs" className="py-32 px-6 bg-[#050505]">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-20">
+                        <h2 className="text-5xl md:text-8xl font-black tracking-tighter mb-6">Nos Tarifs <br /><span className="text-white/30">fixes & garantis.</span></h2>
+                        <p className="text-white/40 text-lg font-medium">Aucune surprise. Le prix annoncé est le prix payé.</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                        {[
+                            { route: "Paris ↔ CDG", price: "80", detail: "Terminaux 1, 2 & 3", badge: "Le plus demandé" },
+                            { route: "Paris ↔ Orly", price: "65", detail: "Orly 1, 2, 3 & 4", badge: null },
+                            { route: "Paris ↔ Disneyland", price: "90", detail: "Hôtels & Parcs inclus", badge: null },
+                            { route: "Paris ↔ Le Bourget", price: "95", detail: "Aviation privée", badge: null },
+                            { route: "Paris ↔ Beauvais", price: "120", detail: "Aéroport Ryanair", badge: null },
+                            { route: "Mise à disposition", price: "120", detail: "Par heure, minimum 2h", badge: null },
+                        ].map((t, i) => (
+                            <div key={i} className="relative p-8 rounded-[32px] bg-white/[0.03] border border-white/5 hover:border-blue-500/20 transition-all group">
+                                {t.badge && (
+                                    <span className="absolute -top-3 left-6 px-4 py-1 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest rounded-full">{t.badge}</span>
+                                )}
+                                <p className="text-white/30 text-[11px] font-black uppercase tracking-[0.2em] mb-3">{t.detail}</p>
+                                <h3 className="text-xl font-black mb-4">{t.route}</h3>
+                                <div className="flex items-end gap-1">
+                                    <span className="text-white/40 text-sm font-bold mb-1">à partir de</span>
+                                    <span className="text-5xl font-black tracking-tighter">{t.price}€</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="text-center p-8 rounded-[32px] bg-blue-600/5 border border-blue-500/10">
+                        <p className="text-white/50 text-sm font-medium">Course minimum <span className="text-white font-black">55€</span> · Sièges bébé <span className="text-white font-black">gratuits</span> · Attente aéroport <span className="text-white font-black">gratuite</span> · Annulation <span className="text-white font-black">gratuite -24h</span></p>
+                    </div>
                 </div>
             </section>
 
@@ -164,12 +199,13 @@ export default function Home() {
                             <span className="text-xl font-black tracking-tighter uppercase">Onyx Drive Paris</span>
                         </div>
                         <p className="text-3xl font-black tracking-tighter leading-tight mb-8">LE SILENCE EST LE NOUVEAU<br /><span className="text-blue-600">STANDARD PREMIUM.</span></p>
-                        <div className="flex gap-4 opacity-40 grayscale transition-all hover:grayscale-0">
-                            {/* Simple payment icons placeholders */}
-                            <div className="w-10 h-6 bg-white/10 rounded" />
-                            <div className="w-10 h-6 bg-white/10 rounded" />
-                            <div className="w-10 h-6 bg-white/10 rounded" />
-                            <div className="w-10 h-6 bg-white/10 rounded" />
+                        <div className="flex flex-col gap-3">
+                            <a href="tel:+33602565680" className="flex items-center gap-3 text-white/60 hover:text-white transition-colors font-bold">
+                                <Phone size={16} className="text-blue-500" /> 06 02 56 56 80
+                            </a>
+                            <a href="https://wa.me/33602565680" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/60 hover:text-white transition-colors font-bold">
+                                <span className="text-green-400 text-base">●</span> WhatsApp disponible
+                            </a>
                         </div>
                     </div>
 
@@ -177,8 +213,8 @@ export default function Home() {
                         <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 mb-8">Navigation</h4>
                         <ul className="space-y-4 text-sm font-bold text-white/50">
                             <li><a href="#booking" className="hover:text-white transition-colors">Réserver un trajet</a></li>
-                            <li><a href="#services" className="hover:text-white transition-colors">Notre Flotte</a></li>
-                            <li><a href="#agents" className="hover:text-white transition-colors">Task Force IA</a></li>
+                            <li><a href="#tarifs" className="hover:text-white transition-colors">Nos Tarifs</a></li>
+                            <li><a href="#services" className="hover:text-white transition-colors">Nos Services</a></li>
                         </ul>
                     </div>
 

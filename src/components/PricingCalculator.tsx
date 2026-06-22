@@ -12,16 +12,29 @@ export default function PricingCalculator() {
     const [showResult, setShowResult] = useState(false);
     const [isCalculating, setIsCalculating] = useState(false);
 
+    function estimatePrice(from: string, to: string): number {
+        const combined = `${from} ${to}`.toLowerCase();
+        if (combined.match(/cdg|charles.de.gaulle|roissy|terminal 1|terminal 2|terminal 3/)) return 80;
+        if (combined.match(/orly/)) return 65;
+        if (combined.match(/disney|disneyland|chessy/)) return 90;
+        if (combined.match(/le.bourget|bourget/)) return 95;
+        if (combined.match(/beauvais/)) return 120;
+        if (combined.match(/versailles/)) return 75;
+        if (combined.match(/lyon|marseille|bordeaux|nice|toulouse|strasbourg|nantes/)) return 250;
+        return 55;
+    }
+
     const handleEstimate = async (e: React.FormEvent) => {
         e.preventDefault();
         if (origin && destination) {
             setIsCalculating(true);
-            // Simulate agent audit
             await new Promise(r => setTimeout(r, 1500));
             setIsCalculating(false);
             setShowResult(true);
         }
     };
+
+    const price = estimatePrice(origin, destination);
 
     return (
         <div className="w-full max-w-xl mx-auto">
@@ -100,7 +113,7 @@ export default function PricingCalculator() {
                                         <div className="flex items-center gap-2 text-emerald-600 font-bold text-[10px] tracking-[0.2em] uppercase mb-2">
                                             <ShieldCheck size={14} /> Tarif Garanti
                                         </div>
-                                        <h4 className="text-5xl font-black tracking-tighter">55,00€</h4>
+                                        <h4 className="text-5xl font-black tracking-tighter">{price.toLocaleString("fr-FR", { minimumFractionDigits: 2 })}€</h4>
                                         <p className="text-[14px] text-black/40 font-bold uppercase tracking-tight mt-1">Mercedes EQV Signature</p>
                                     </div>
                                     <div className="text-right">
