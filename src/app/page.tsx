@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronRight, ShieldCheck, Globe, Zap, Sparkles, Search, CheckCircle2, ArrowRight, Plane, Hotel, Calculator } from "lucide-react";
+import { ChevronRight, ShieldCheck, Globe, Zap, Sparkles, Plane, Hotel } from "lucide-react";
 import Link from "next/link";
 import BookingForm from "@/components/BookingForm";
 
@@ -186,7 +186,7 @@ export default function Home() {
                         <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 mb-8">Légal</h4>
                         <ul className="space-y-4 text-sm font-bold text-white/50">
                             <li><Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link></li>
-                            <li><Link href="/cgv" className="hover:text-white transition-colors">CGV</Link></li>
+                            <li><Link href="/conditions" className="hover:text-white transition-colors">CGV</Link></li>
                             <li><Link href="/confidentialite" className="hover:text-white transition-colors">Confidentialité</Link></li>
                         </ul>
                     </div>

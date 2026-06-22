@@ -6,10 +6,10 @@ export default function LegalPage() {
             <section className="space-y-8 text-sm leading-relaxed text-onyx-silver">
                 <div>
                     <h2 className="text-lg font-bold text-onyx-black mb-4">1. Éditeur du Site</h2>
-                    <p>Le site Onyx Platinum est édité par l'entreprise <strong>EASYMOVEVAN</strong> (ou ton nom définitif).<br />
+                    <p>Le site Onyx Drive Paris est édité par l'entreprise <strong>EASYMOVEVAN</strong>.<br />
                         Siège social : Cormeilles-en-Parisis, France.<br />
-                        Numéro SIRET : [À COMPLÉTER]<br />
-                        Responsable de la publication : [TON NOM]</p>
+                        Numéro SIRET : <strong>[À COMPLÉTER]</strong><br />
+                        Responsable de la publication : <strong>[À COMPLÉTER]</strong></p>
                 </div>
 
                 <div>

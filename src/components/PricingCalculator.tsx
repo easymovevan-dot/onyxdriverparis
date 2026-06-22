@@ -28,7 +28,7 @@ export default function PricingCalculator() {
             <div className="bg-white rounded-[32px] p-8 md:p-12 overflow-hidden shadow-2xl shadow-black/5 border border-black/[0.03]">
                 <div className="flex items-center gap-3 mb-10">
                     <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center text-white">
-                        <Zap size={20} className="text-gold" />
+                        <Zap size={20} className="text-onyx-gold" />
                     </div>
                     <div>
                         <h3 className="text-lg font-bold leading-none mb-1">Audit Tarifaire Instantané</h3>
@@ -69,7 +69,7 @@ export default function PricingCalculator() {
                     >
                         {isCalculating ? (
                             <span className="flex items-center gap-3">
-                                <span className="w-5 h-5 border-2 border-white/20 border-t-gold rounded-full animate-spin" />
+                                <span className="w-5 h-5 border-2 border-white/20 border-t-onyx-gold rounded-full animate-spin" />
                                 Audit des tarifs en cours...
                             </span>
                         ) : (
@@ -77,7 +77,7 @@ export default function PricingCalculator() {
                                 Calculer le tarif Platinum <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </>
                         )}
-                        <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                        <div className="absolute inset-0 bg-onyx-gold/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                     </button>
                 </form>
 

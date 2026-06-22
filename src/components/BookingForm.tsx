@@ -9,6 +9,7 @@ import { CheckCircle2, Loader2, ArrowRight, Plane, MapPin, Calendar, Clock } fro
 export default function BookingForm() {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [error, setError] = useState("");
     const [tripType, setTripType] = useState<"one-way" | "round-trip">("one-way");
     const [formData, setFormData] = useState({
         name: "",
@@ -28,6 +29,7 @@ export default function BookingForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
+        setError("");
 
         try {
             await addDoc(collection(db, "bookings"), {
@@ -42,9 +44,9 @@ export default function BookingForm() {
                 date: "", time: "", returnDate: "", returnTime: "",
                 service: "Transfert Aéroport", passengers: "1-4", message: ""
             });
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Une erreur est survenue lors de l'envoi.");
+        } catch (err) {
+            console.error("Error:", err);
+            setError("Une erreur est survenue lors de l'envoi. Veuillez réessayer.");
         } finally {
             setLoading(false);
         }
@@ -232,6 +234,10 @@ export default function BookingForm() {
                                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                     />
                                 </div>
+
+                                {error && (
+                                    <p className="text-red-400 text-sm text-center font-medium">{error}</p>
+                                )}
 
                                 <button
                                     disabled={loading}

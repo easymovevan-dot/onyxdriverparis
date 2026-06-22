@@ -8,7 +8,7 @@ export default function BusinessSilo() {
     return (
         <main className="min-h-screen bg-[#000000] text-white">
             {/* Mini Nav Dark Mode */}
-            <nav className="fixed top-0 w-full z-50 dark-glass border-b border-white/10 h-12 flex items-center justify-center px-4">
+            <nav className="fixed top-0 w-full z-50 glass border-b border-white/10 h-12 flex items-center justify-center px-4">
                 <div className="max-w-5xl w-full flex justify-between items-center text-[12px] font-medium">
                     <Link href="/" className="font-semibold tracking-tight text-sm">ONYX DRIVE</Link>
                     <div className="flex gap-8 text-onyx-grey">

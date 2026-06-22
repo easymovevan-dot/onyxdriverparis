@@ -78,7 +78,7 @@ export default function AirportSilo() {
             </section>
 
             <footer className="py-20 text-center border-t border-black/5 mt-20">
-                <p className="text-[12px] font-bold tracking-widest text-onyx-grey uppercase underline cursor-pointer hover:text-black transition-all">Retourner à l'accueil</p>
+                <Link href="/" className="text-[12px] font-bold tracking-widest text-onyx-grey uppercase underline cursor-pointer hover:text-black transition-all">Retourner à l'accueil</Link>
             </footer>
         </main>
     );
